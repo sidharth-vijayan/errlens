@@ -8,12 +8,13 @@ const path = require("path");
 const { findError } = require("../lib/matcher");
 const { formatError } = require("../lib/formatter");
 
+const { version } = require("../package.json");
 const program = new Command();
 
 program
   .name("errlens")
   .description("Professional JS Error Analytics")
-  .version("1.3.1");
+  .version(version);
 
 // ----------------- RUN COMMAND -----------------
 program
@@ -23,7 +24,7 @@ program
   .action(async (file, options) => {
     const { default: ora } = await import("ora");
     const filePath = path.resolve(process.cwd(), file);
-    const isJson = Boolean(options.json || process.argv.includes("--json"));
+    const isJson = Boolean(options.json);
     const spinner = isJson ? null : ora(`Running ${chalk.yellow(file)}...`).start();
 
     const child = spawn(process.execPath, [filePath], { stdio: ["inherit", "pipe", "pipe"] });
@@ -103,7 +104,7 @@ program
   .action((errorString, options) => {
     const { count, matches } = findError(errorString);
     const exitCode = count > 0 ? 1 : 0;
-    const isJson = Boolean(options.json || process.argv.includes("--json"));
+    const isJson = Boolean(options.json);
 
     if (isJson) {
       console.log(JSON.stringify({ code: exitCode, count, matches }, null, 2));
