@@ -2,7 +2,7 @@
 
 const { Command } = require("commander");
 const { spawn } = require("child_process");
-const ora = require("ora").default; 
+
 const chalk = require("chalk");
 const path = require("path");
 const { findError } = require("../lib/matcher");
@@ -20,7 +20,8 @@ program
   .command("run <file>")
   .option('--json', 'Output JSON instead of pretty UI')
   .description("Run a Javascript file and analyze crashes")
-  .action((file, options) => {
+  .action(async (file, options) => {
+    const { default: ora } = await import("ora");
     const filePath = path.resolve(process.cwd(), file);
     const isJson = Boolean(options.json || process.argv.includes("--json"));
     const spinner = isJson ? null : ora(`Running ${chalk.yellow(file)}...`).start();
@@ -73,7 +74,7 @@ program
       } else {
         if (count > 0) {
           console.log(chalk.bold.cyan(`\n🚀 ErrLens Analysis (${count} Issue(s)):`));
-          matches.forEach(m => console.log(formatError(m))); // Pretty UI only here
+          matches.forEach(m => { console.log(formatError(m)); }); // Pretty UI only here
         } else {
           console.log(chalk.red.bold("\n❌ Crash detected (No known fix in database):"));
           console.log(chalk.gray(errorOutput));
@@ -112,7 +113,7 @@ program
 
     if (count > 0) {
       console.log(chalk.bold.cyan(`\n🚀 ErrLens Analysis (${count} Issue(s)):`));
-      matches.forEach(m => console.log(formatError(m))); // Pretty UI
+      matches.forEach(m => { console.log(formatError(m)); }); // Pretty UI
     } else {
       console.log(chalk.red.bold("\n❌ Crash detected (No known fix in database):"));
       console.log(chalk.gray(errorString));
