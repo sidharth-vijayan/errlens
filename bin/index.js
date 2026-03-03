@@ -105,7 +105,7 @@ program
     const isJson = Boolean(options.json || process.argv.includes("--json"));
 
     if (isJson) {
-      console.log(JSON.stringify({ code: 1, count, matches }, null, 2));
+      console.log(JSON.stringify({ code: exitCode, count, matches }, null, 2));
       process.exit(exitCode);
       return;
     }
@@ -117,6 +117,8 @@ program
       console.log(chalk.red.bold("\n❌ Crash detected (No known fix in database):"));
       console.log(chalk.gray(errorString));
     }
+
+    process.exit(exitCode);
   });
 
 // ----------------- PARSE ARGUMENTS -----------------
