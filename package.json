@@ -1,6 +1,6 @@
 {
   "name": "errlens",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Professional CLI tool that explains JavaScript and Node.js errors in plain English with actionable fixes directly in your terminal.",
   "main": "./bin/index.js",
   "bin": {
@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "boxen": "^5.1.2",
-    "chalk": "^5.6.2",
+    "chalk": "^4.1.2",
     "commander": "^14.0.3",
     "fuse.js": "^7.0.0",
     "ora": "^9.3.0"
