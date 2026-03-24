@@ -187,13 +187,13 @@
   "npm ERR! 404__why": "Tippfehler im Paketnamen oder es ist ein privates Paket.",
   "npm ERR! 404__fix_0": "Prüfe die Schreibweise des Pakets",
   "npm ERR! 404__fix_1": "npm login",
-  "Unexpected end of input__explanation": "Dein Code wurde abrupt beendet, wahrscheinlich fehlt eine schließende Klammer.",
-  "Unexpected end of input__why": "Du hast eine ( [ oder { geöffnet, aber vergessen, sie mit ) ] oder } zu schließen.",
-  "Unexpected end of input__fix_0": "Prüfe auf fehlende schließende Klammern )",
-  "Unexpected end of input__fix_1": "Prüfe auf fehlende geschweifte Klammern }",
+  "Unexpected end of input__explanation": "Ihr Code wurde abrupt beendet, wahrscheinlich fehlt eine schließende Klammer.",
+  "Unexpected end of input__why": "Sie haben eine ( [ oder { geöffnet, aber vergessen, sie mit ) ] oder } zu schließen.",
+  "Unexpected end of input__fix_0": "Prüfen Sie auf fehlende schließende Klammern )",
+  "Unexpected end of input__fix_1": "Prüfen Sie auf fehlende geschweifte Klammern }",
   "Unexpected end of input__fix_2": "Stelle sicher, dass alle Anführungszeichen ' oder \" geschlossen sind",
-  "missing ) after argument list__explanation": "Du hast vergessen, einen Funktionsaufruf mit ')' zu schließen.",
+  "missing ) after argument list__explanation": "Sie haben vergessen, einen Funktionsaufruf mit ')' zu schließen.",
   "missing ) after argument list__why": "Eine Klammer wurde geöffnet, aber die Zeile endete oder ein anderes Symbol erschien, bevor sie geschlossen wurde.",
-  "missing ) after argument list__fix_0": "Füge eine ')' am Ende deines Funktionsaufrufs hinzu",
-  "missing ) after argument list__fix_1": "Prüfe, ob du versehentlich eine ')' beim Tippen gelöscht hast"
+  "missing ) after argument list__fix_0": "Fügen Sie eine ')' am Ende Ihres Funktionsaufrufs hinzu",
+  "missing ) after argument list__fix_1": "Prüfen Sie, ob Sie versehentlich eine ')' beim Tippen gelöscht haben"
 }

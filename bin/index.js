@@ -118,38 +118,28 @@ program
   });
 
 // ----------------- ANALYZE COMMAND -----------------
-program
+  program
   .command("analyze <errorString>")
   .description("Analyze a specific error string")
   .option("--lang <code>", "output language (e.g. hi, es, fr)", "en")
-  .argument("<error>", "error to explain")
-  
-
-  .action(async (errorString,options) => {
+  .action(async (errorString, options) => {
     const { default: chalk } = await import("chalk");
     const isJson = Boolean(program.opts().json);
-    const { count, matches } = findError(errorString,options.lang);
+    const { count, matches } = findError(errorString, options.lang);
     const exitCode = count > 0 ? 1 : 0;
 
     if (isJson) {
-      console.log(
-        JSON.stringify({ code: exitCode, count, matches }, null, 2)
-      );
+      console.log(JSON.stringify({ code: exitCode, count, matches }, null, 2));
       process.exit(exitCode);
     }
 
     if (count > 0) {
-      console.log(
-        chalk.bold.cyan(`\n🚀 ErrLens Analysis (${count} Issue(s)):`)
-      );
+      console.log(chalk.bold.cyan(`\n🚀 ErrLens Analysis (${count} Issue(s)):`));
       matches.forEach((m) => console.log(formatError(m)));
     } else {
-      console.log(
-        chalk.red.bold("\n❌ Crash detected (No known fix in database):")
-      );
+      console.log(chalk.red.bold("\n❌ Crash detected (No known fix in database):"));
       console.log(chalk.gray(errorString));
     }
-    
 
     process.exit(exitCode);
   });

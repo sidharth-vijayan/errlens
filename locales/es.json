@@ -99,7 +99,7 @@
   "EACCES__explanation": "No tienes permiso para acceder a este archivo/puerto.",
   "EACCES__why": "Necesitas permisos de administrador o el archivo está bloqueado.",
   "EACCES__fix_0": "Usa 'sudo' (Linux/Mac)",
-  "EACCES__fix_1": "Verificar los permisos del archivo",
+  "EACCES__fix_1": "Verifica los permisos del archivo",
   "has already been declared__explanation": "Declaraste el mismo nombre de variable dos veces.",
   "has already been declared__why": "Usar 'let' o 'const' en un nombre que ya existe en el mismo ámbito.",
   "has already been declared__fix_0": "Renombrar una de las variables",
