@@ -28,6 +28,7 @@
   "files": [
     "bin/",
     "lib/",
+    "locales/",
     "README.md",
     "LICENSE"
   ],
