@@ -34,6 +34,20 @@
 </br>
 </br>
 
+---
+
+### 🎬 Live Demo
+
+**Automatic Error Monitoring (`errlens run test.js`):**
+
+![ErrLens Run Demo](assets/run-demo.gif)
+
+**Manual Error Analysis (`errlens analyze "..."`):**
+
+![ErrLens Analyze Demo](assets/analyze-demo.gif)
+
+---
+
 ## 🌟 Key Features
 
 - 🚀 **Instant Diagnostics** – No more context-switching to Google or StackOverflow.  
