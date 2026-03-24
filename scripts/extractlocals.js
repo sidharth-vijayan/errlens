@@ -13,7 +13,7 @@ for (const entry of db){
     en[`${key}__explanation`] = entry.explanation
     en[`${key}__why`] = entry.why
 
-    entry.fixes.forEach((fix,i) => {
+    (Array.isArray(entry.fixes) ? entry.fixes : []).forEach((fix,i) => {
         en[`${key}__fix_${i}`] = fix
     })
 }
