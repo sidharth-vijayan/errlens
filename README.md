@@ -212,6 +212,42 @@ errlens run app.js --lang ja
 ---
 ---
 
+### 4️⃣ Multilingual Support
+
+ErrLens supports error explanations in multiple languages using the `--lang` flag.
+
+**Default behavior:** English (`en`) is used when `--lang` is not specified.
+```bash
+# Run a file and get explanation in Hindi
+errlens run app.js --lang hi
+
+# Analyze an error string in Spanish
+errlens analyze "Cannot read properties of undefined" --lang es
+
+# Run a file and get explanation in Japanese
+errlens run app.js --lang ja
+```
+
+#### 🌍 Supported Languages
+
+| Language   | Code |
+|------------|------|
+| English    | `en` |
+| Hindi      | `hi` |
+| Spanish    | `es` |
+| French     | `fr` |
+| German     | `de` |
+| Chinese    | `zh` |
+| Japanese   | `ja` |
+| Portuguese | `pt` |
+
+> 💡 **Tip:** Combine with `--json` for multilingual CI/CD pipeline output:
+> ```bash
+> errlens analyze "is not a function" --lang fr --json
+> ```
+
+---
+
 ## 🧠 System Architecture
 
 ErrLens operates on a three-stage intelligent pipeline to turn confusion into clarity:
